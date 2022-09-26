@@ -1,88 +1,76 @@
 -- 1
 
-SELECT yr, subject, winner
-FROM nobel
-WHERE yr = 1950;
+SELECT name, continent, population FROM world
 
- -- 2
+-- 2
 
-SELECT winner
-FROM nobel
-WHERE yr = 1962
-AND subject = 'literature';
+SELECT name FROM world
+WHERE population >= 200000000;
 
 -- 3
 
-SELECT yr, subject
-FROM nobel
-WHERE winner = 'Albert Einstein';
+SELECT name, gdp / population AS GDP_per_capita
+FROM world
+WHERE population >= 200000000;
 
 -- 4
 
-SELECT winner
-FROM nobel
-WHERE yr >= 2000 AND subject = 'peace';
+SELECT name, population / 1000000 AS pop_in_millions
+FROM world
+WHERE continent = 'South America';
 
--- 5 
+-- 5
 
-SELECT *
-FROM nobel
-WHERE subject = 'literature' AND yr >= 1980 AND yr <= 1989;
+SELECT name, population
+FROM world
+WHERE name IN ('France', 'Germany', 'Italy');
 
 -- 6
 
-SELECT *
-FROM nobel
-WHERE winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
+SELECT name
+FROM world
+WHERE name LIKE '%United%';
 
--- 7
+-- 7 
 
-SELECT winner
-FROM nobel
-WHERE winner LIKE 'John%';
+SELECT name, population, area
+FROM world
+WHERE area > 3000000 OR population > 250000000;
 
--- 8
+-- 8 
 
-SELECT yr, subject, winner
-FROM nobel
-WHERE subject = 'physics' AND yr = 1980
-OR subject = 'chemistry' AND yr = 1984;
+SELECT name, population, area
+FROM world
+WHERE area > 3000000 XOR population > 250000000;
 
 -- 9
 
-SELECT yr, subject, winner
-FROM nobel
-WHERE yr = 1980 AND subject NOT IN ('chemistry', 'medicine');
+SELECT name, ROUND(population / 1000000, 2) AS pop_millions, ROUND(gdp / 1000000000, 2) AS gdp_billions
+FROM world
+WHERE continent = 'South America';
 
 -- 10
 
-SELECT yr, subject, winner
-FROM nobel
-WHERE subject = 'Medicine' AND yr < 1910
-OR subject = 'Literature' AND yr >= 2004;
+SELECT name, ROUND(gdp / population, -3) AS gdp_per_capita
+FROM world
+WHERE gdp >= 1000000000000;
 
 -- 11
 
-SELECT *
-FROM nobel
-WHERE winner = 'PETER GRÜNBERG';
+SELECT name, capital
+FROM world
+WHERE LENGTH(name) = LENGTH(capital);
 
 -- 12
 
-SELECT *
-FROM nobel
-WHERE winner ='EUGENE O''NEILL' 
+SELECT name, capital
+FROM world
+WHERE LEFT(name, 1) = LEFT(capital, 1)
+AND name <> capital;
 
--- 13
+-- 13 Find the country that has all the vowels and no spaces in its name.
 
-SELECT winner, yr, subject
-FROM nobel
-WHERE winner LIKE 'Sir%'
-ORDER BY yr DESC, winner;
-
--- 14 Show the 1984 winners and subject ordered by subject and winner name; but list chemistry and physics last.
-
-SELECT winner, subject
-FROM nobel
-WHERE yr = 1984
-ORDER BY subject IN('chemistry', 'physics'), subject, winner;
+SELECT name
+   FROM world
+WHERE name LIKE '%a%' AND name LIKE '%e%' AND name LIKE '%i%' AND name LIKE '%o%' AND name LIKE '%u%'
+  AND name NOT LIKE '% %'
