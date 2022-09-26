@@ -14,7 +14,9 @@
     - WHERE filters before any math in the select 
 
 ## 02
-
+- You can escape single quotes (') by doing 2 of them (O''Neill)
+- You can chain ORDER BY using commas
+- IN () can be used as a value; it returns 1 if there's a match and 0 if not
 
 ## 03
 
