@@ -36,7 +36,7 @@
 - Means HAVING can't use original cols as conditions (unless you include them in the new table), can use SUM/COUNT etc. of them though
 
 ## 06
-
+- Seems when you use GROUP BY you need to list all the non-aggregated cols in the order you want them to be grouped by
 
 ## 07
 
