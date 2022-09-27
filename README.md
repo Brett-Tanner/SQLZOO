@@ -32,7 +32,8 @@
 - For #10 I forgot to exclude the country itself from the list of countries it was being compared against, but got there in the end
 
 ## 05
-
+- WHERE sorts stuff before GROUP BY, HAVING after they're grouped
+- Means HAVING can't use original cols as conditions (unless you include them in the new table), can use SUM/COUNT etc. of them though
 
 ## 06
 
