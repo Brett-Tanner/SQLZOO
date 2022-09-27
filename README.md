@@ -39,7 +39,7 @@
 - Seems when you use GROUP BY you need to list all the non-aggregated cols in the order you want them to be grouped by
 
 ## 07
-
+- You can use GROUP BY and HAVING even if none of the SELECTED cols are aggregate functions
 
 ## 08
 
