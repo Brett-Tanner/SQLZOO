@@ -42,7 +42,9 @@
 - You can use GROUP BY and HAVING even if none of the SELECTED cols are aggregate functions
 
 ## 08
-
+- Remember you can use COALESCE() to return the first non-null value from list of values
+- COUNT() ignores NULL
+- In case, you can use OR to link conditions which have the same THEN value
 
 ## 09
 
