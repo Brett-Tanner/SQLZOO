@@ -47,7 +47,7 @@
 - In case, you can use OR to link conditions which have the same THEN value
 
 ## 09
-
+- 
 
 ## 10
 
