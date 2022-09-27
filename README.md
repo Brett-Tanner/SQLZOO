@@ -26,7 +26,10 @@
 - IN () can be used as a value; it returns 1 if there's a match and 0 if not
 
 ## 04
-
+- If you select a single value (in brackets), you can use that value as a value for something else
+- You can use ALL after a comparison operator to compare the left side to all of a list of values
+- If you use an alias for the tables in nested SELECTs, you can compare values from each of the tables
+- For #10 I forgot to exclude the country itself from the list of countries it was being compared against, but got there in the end
 
 ## 05
 
