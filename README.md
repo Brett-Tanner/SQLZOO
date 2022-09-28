@@ -47,7 +47,23 @@
 - In case, you can use OR to link conditions which have the same THEN value
 
 ## 09
-- 
+- RANK() OVER(PARTITION BY col ORDER BY col) AS col_name
+    - ranks the rows by the ORDER BY value in a new col
+    - PARTITION BY groups by the col you provide
+- LAG(col to lag, lag amount) OVER (PARTITION BY col ORDER BY col)
+    - used to show data from preceding rows of the table
+- LEAD(col to lead, lead amount) OVER (PARTITION BY col ORDER BY col)
+    - used to show data from subsequent rows of the table
+- NTILE
+    - 
+- You can use DAY(col), MONTH(col) and YEAR(col) to extract those values from a date value in a col
+ - WEEKDAY(col) = 0 for Monday
+- DATE_ADD(date, INTERVAL num week/day/month/yr)
+    - Allows you to add number of interval to date
+- DATE_FORMAT(date, template)
+    - lets you format the date using the template
+- WITH name AS (select statement)
+    - lets you set a variable of name to be used in a subsequent SQL query
 
 ## 10
 
